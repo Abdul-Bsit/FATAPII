@@ -1,23 +1,19 @@
 {
-    "builds": [
-      {
-        "src": "main.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "main.py"
-      }
-        {
   "functions": {
     "api/*": {
-      "memory": 512
+      "memory": 512,
+      "runtime": "python3.11"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "main.py"
+    }
+  ],
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
     }
   }
 }
-
-    ]
-  }
-  
